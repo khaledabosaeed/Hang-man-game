@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #e91e63;
+  --secondry-color: #f8f8f8;
+  --third-color: #009688;
+  --main-width: 4px;
+  --color-boder: #222;
+}
+.continar {
+  margin: 20px auto;
+  width: 1000px;
+}
+.game-info {
+  display: flex;
+  justify-content: space-between;
+}
+.catarory > span {
+  text-transform: capitalize;
+  color: var(--main-color);
+  font-weight: bold;
+}
+hr {
+  border: 1px solid #eee;
+}
+
+.play {
+  display: flex;
+  margin: 20px;
+  height: 324px;
+  padding: 10px;
+}
+.play > .man-draw {
+  flex: 1;
+  height: 280px;
+  width: 60px;
+  background-color: var(--secondry-color);
+  border-bottom: var(--main-width) solid var(--color-boder);
+  position: relative;
+  margin: auto;
+}
+.play > .man-draw .stand {
+  position: absolute;
+  width: var(--main-width);
+  background-color: var(--color-boder);
+  height: 100%;
+  left: 35%;
+  transform: translateX(-50%);
+}
+.play > .man-draw .hang::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 154px;
+  width: 100px;
+  height: var(--main-width);
+  background-color: var(--color-boder);
+}
+.play > .man-draw .hang::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 250px;
+  width: var(--main-width);
+  height: 30px;
+  background-color: var(--color-boder);
+}
+.play > .man-draw .rope {
+  position: absolute;
+  top: 30px;
+  left: 211px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px dashed var(--color-boder);
+}
+.play > .man-draw .man {
+  position: relative;
+  left: 126px;
+}
+.play > .man-draw .man .head {
+  position: absolute;
+  top: 40px;
+  left: 95px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid var(--color-boder);
+}
+.play > .man-draw .man .body {
+  position: absolute;
+  width: var(--main-width);
+  background-color: var(--color-boder);
+  height: 130px;
+  left: 125px;
+  top: 100px;
+}
+.play > .man-draw .man .hands::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  background-color: var(--color-boder);
+  height: var(--main-width);
+  left: 125px;
+  top: 130px;
+  transform: rotate(150deg);
+}
+
+.play > .man-draw .man .hands::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  background-color: var(--color-boder);
+  height: var(--main-width);
+  left: 80px;
+  top: 130px;
+  transform: rotate(35deg);
+}
+.play > .man-draw .man .legs::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  background-color: var(--color-boder);
+  height: var(--main-width);
+  left: 120px;
+  top: 240px;
+  transform: rotate(-150deg);
+  z-index: 1;
+}
+
+.play > .man-draw .man .legs::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  background-color: var(--color-boder);
+  height: var(--main-width);
+  left: 73px;
+  top: 242px;
+  transform: rotate(-35deg);
+  z-index: 1;
+}
+.play .letters {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.play .letters .letter-box{
+  width: 55px;
+  height: 55px;
+  background-color: var(--third-color);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  line-height: 55px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
