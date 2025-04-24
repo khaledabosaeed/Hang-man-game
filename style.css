@@ -18,9 +18,9 @@
   display: flex;
   justify-content: space-between;
 }
-.catarory > span {
+.category span {
   text-transform: capitalize;
-  color: var(--main-color);
+  color: red;
   font-weight: bold;
 }
 hr {
@@ -150,7 +150,7 @@ hr {
   flex-direction: column;
   flex-wrap: wrap;
 }
-.play .letters .letter-box{
+.play .letters .letter-box {
   width: 55px;
   height: 55px;
   background-color: var(--third-color);
@@ -161,4 +161,46 @@ hr {
   line-height: 55px;
   text-transform: uppercase;
   cursor: pointer;
+}
+.play .letters .clicked {
+  background-color: var(--color-boder);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.letter-guess {
+  margin: 10px auto;
+  background-color: var(--secondry-color);
+  display: flex;
+  justify-content: center;
+  line-height: 104px;
+  padding: 20px;
+}
+.letter-guess span {
+  height: 60px;
+  width: 60px;
+  text-transform: uppercase;
+  border-bottom: var(--main-width) solid var(--color-boder);
+  border-radius: 6px;
+  text-align: center;
+  line-height: 60px;
+  margin-left: 20px;
+  background-color: #fdfdfd;
+  transition: 0.3s;
+  font-size: 24px;
+  font-weight: bold;
+} 
+.letter-guess span.Empty {
+  background-color: var(--secondry-color);
+  border-bottom: none;
+  position: relative;
+}
+.letter-guess span.Empty::before {
+  content: "";
+  width: 20px;
+  height: 4px;
+  background-color: var(--color-boder);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
