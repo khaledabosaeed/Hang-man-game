@@ -41,6 +41,7 @@ hr {
   border-bottom: var(--main-width) solid var(--color-boder);
   position: relative;
   margin: auto;
+  /* display: none; */
 }
 .play > .man-draw .stand {
   position: absolute;
@@ -49,6 +50,11 @@ hr {
   height: 100%;
   left: 35%;
   transform: translateX(-50%);
+  display: none;
+
+}
+.play > .man-draw .hang{
+  display: none;
 }
 .play > .man-draw .hang::before {
   content: "";
@@ -76,10 +82,12 @@ hr {
   height: 80px;
   border-radius: 50%;
   border: 5px dashed var(--color-boder);
+  display: none;
 }
 .play > .man-draw .man {
   position: relative;
   left: 126px;
+  /* display: none; */
 }
 .play > .man-draw .man .head {
   position: absolute;
@@ -89,6 +97,7 @@ hr {
   height: 60px;
   border-radius: 50%;
   border: 5px solid var(--color-boder);
+  display: none;
 }
 .play > .man-draw .man .body {
   position: absolute;
@@ -97,6 +106,11 @@ hr {
   height: 130px;
   left: 125px;
   top: 100px;
+  display: none;
+
+}
+.play > .man-draw .man .hands{
+  display: none;
 }
 .play > .man-draw .man .hands::after {
   content: "";
@@ -118,6 +132,9 @@ hr {
   left: 80px;
   top: 130px;
   transform: rotate(35deg);
+}
+.play > .man-draw .man .legs{
+  display: none;
 }
 .play > .man-draw .man .legs::after {
   content: "";
@@ -142,6 +159,29 @@ hr {
   transform: rotate(-35deg);
   z-index: 1;
 }
+.play > .man-draw.wrong-1 .stand{
+  display: block;
+}
+.play > .man-draw.wrong-2 .hang{
+  display: block;
+}
+.play > .man-draw.wrong-3 .rope{
+  display: block;
+}
+.play > .man-draw.wrong-4 .man .head{
+  display: block;
+}   
+.play > .man-draw.wrong-5 .man .body{
+  display: block;
+}   
+.play > .man-draw.wrong-6 .man .hands{
+  display: block;
+}
+.play > .man-draw.wrong-7 .man .legs{
+  display: block;
+}
+
+
 .play .letters {
   flex: 1;
   padding: 15px;
@@ -149,6 +189,11 @@ hr {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+.play .letters.disabled {
+  pointer-events: none ;
+  opacity: 0.3;
+  /* cursor: not-allowed; */
 }
 .play .letters .letter-box {
   width: 55px;
@@ -203,4 +248,16 @@ hr {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.game-over {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
